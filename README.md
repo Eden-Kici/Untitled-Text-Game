@@ -1,2 +1,3 @@
 # Untitled-Text-Game
-Very short text game to practice C++
+A very short text (console) game I made in about a week to practice C++
+IDE used: CLion
