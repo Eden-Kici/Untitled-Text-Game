@@ -1,0 +1,8 @@
+//
+// Created by kicie on 16/11/2025.
+//
+
+#ifndef UNTITLEDTEXTGAME_SETPRONOUNS_H
+#define UNTITLEDTEXTGAME_SETPRONOUNS_H
+void setPronouns();
+#endif //UNTITLEDTEXTGAME_SETPRONOUNS_H

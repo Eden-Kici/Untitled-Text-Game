@@ -1,0 +1,3 @@
+C:/Users/kicie/CLionProjects/UntitledTextGame/cmake-build-debug/CMakeFiles/UntitledTextGame.dir
+C:/Users/kicie/CLionProjects/UntitledTextGame/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kicie/CLionProjects/UntitledTextGame/cmake-build-debug/CMakeFiles/rebuild_cache.dir

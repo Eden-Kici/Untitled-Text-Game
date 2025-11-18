@@ -1,0 +1,8 @@
+//
+// Created by kicie on 16/11/2025.
+//
+
+#ifndef UNTITLEDTEXTGAME_LEVELONENEW_H
+#define UNTITLEDTEXTGAME_LEVELONENEW_H
+void levelOne();
+#endif //UNTITLEDTEXTGAME_LEVELONENEW_H
