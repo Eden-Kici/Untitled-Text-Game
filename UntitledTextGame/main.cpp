@@ -5,18 +5,18 @@
 #include "choosePlayerGender.h"
 #include "player.h"
 #include "levelOne.h"
-#include "setPronouns.h"
-#include "setStats.h"
 using namespace std;
 
 int main() {
-    player.name = choosePlayerName();
-    player.gender = choosePlayerGender();
-    player.playerClass = choosePlayerClass();
-    setPronouns();
-    setStats();
+    Player player;
 
+    player.setName(choosePlayerName());
+    player.setGender(choosePlayerGender());
+    player.setClass(choosePlayerClass());
 
-    levelOne();
+    player.setPronouns();
+    player.setStats();
 
+    LevelOne level(player);   // give level access to the player
+    level.run();
 }

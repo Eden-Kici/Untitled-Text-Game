@@ -6,7 +6,7 @@
 #include "roll.h"
 
 int roll(int mod, int dc) {
-    std::cout << "DC " << dc << " | Rollng with advantage..." << std::endl;
+    std::cout << "DC " << dc << " | Rollng..." << std::endl;
     int x = rand() % 21 + mod;
     std::cout << x;
     return x;

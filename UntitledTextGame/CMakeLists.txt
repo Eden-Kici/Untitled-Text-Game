@@ -20,8 +20,4 @@ add_executable(UntitledTextGame main.cpp
         choice.h
         levelOne.h
         player.cpp
-        setPronouns.cpp
-        setPronouns.h
-        setStats.cpp
-        setStats.h
 )
