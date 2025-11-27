@@ -4,7 +4,6 @@
 
 #ifndef UNTITLEDTEXTGAME_LEVELONE_H
 #define UNTITLEDTEXTGAME_LEVELONE_H
-#pragma once
 #include "player.h"
 
 class LevelOne {

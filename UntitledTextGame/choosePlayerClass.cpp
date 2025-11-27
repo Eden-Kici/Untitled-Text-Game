@@ -8,10 +8,10 @@ int choosePlayerClass() {
     int playerClass {};
     int playerClassConfirmed {};
     while (playerClass != 1 || playerClass != 2 || playerClass != 3) {
-        std::cout << std::endl << "Choose your class: " << std::endl;
+        std::cout << "Choose your class: " << std::endl;
         std::cout << "1. Sellsword: | 20 HP |  STR 7 | DEX 2 |  " << std::endl;
-        std::cout << "2. Thief: | 14 HP |  STR 4 | DEX 4 |  " << std::endl;
-        std::cout << "3. Archer: | 10 HP |  STR 3 | DEX 8 |  " << std::endl;
+        std::cout << "2. Thief:     | 14 HP |  STR 4 | DEX 4 |  " << std::endl;
+        std::cout << "3. Archer:    | 10 HP |  STR 3 | DEX 8 |  " << std::endl;
 
         std::cin >> playerClass;
 

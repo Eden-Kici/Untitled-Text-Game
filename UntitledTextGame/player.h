@@ -47,7 +47,5 @@ public:
     // gameplay interactions
     void takeDamage(int amount);
 
-
-
 };
 #endif //UNTITLEDTEXTGAME_PLAYER_H

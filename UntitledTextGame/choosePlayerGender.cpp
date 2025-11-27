@@ -17,7 +17,7 @@ int choosePlayerGender() {
             std::cin >> gender;
         }
         std::cout << "Are you sure? This cannot be changed later." << std::endl;
-        std::cout << "1. Yes     2. No" << std::endl;
+        std::cout << "1. Yes" << std::endl << "2. No" << std::endl;
         std::cin >> genderConfirmed;
 
         while (genderConfirmed != 1 && genderConfirmed != 2) {

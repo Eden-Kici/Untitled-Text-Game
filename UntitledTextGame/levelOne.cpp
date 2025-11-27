@@ -26,7 +26,7 @@ int LevelOne::breakFreeChoice(bool escapeFailed) {
                 cout << "   1. [Thief] Try to wriggle out of your bindings." << endl;
                 break;
             case 3:
-                cout << "   1. [Archer] Try to cut the bindings against the tree." << endl;
+                cout << "   1. [Archer] Try to cut the bindings against the tree bark." << endl;
                 break;
             default:
                 cout << "Player class not found (escapeFailed).";
@@ -56,12 +56,12 @@ int LevelOne::breakFreeChoice(bool escapeFailed) {
 
 }
 int LevelOne::waitChoice() {
-    cout << "Some bandits huddled around a campfire laugh in the distance, although you can't tell what about exactly." << endl;
-    cout << "Not long passes until one of the bandits approaches with a bowl of water." << endl;
-    cout << " Bandit: Drink up. Can't have you dying on us." << endl << endl;
+    cout << "Some of your captors say and laugh, though you can't tell what about." << endl;
+    cout << "Not long passes until one of them approaches with a bowl of water." << endl;
+    cout << " Man: Drink up. Can't have you dying on us." << endl << endl;
 
-    cout << "   1. Intimidate him." << endl;
-    cout << "   2. Persuade him to let you go." << endl;
+    cout << "   1. \"If you don't let me go, when someone does, you will be the first to go.\"" << endl;
+    cout << "   2. \"No one is going to come looking for me, if that's what you're wondering.\"" << endl;
     cout << "   3. Wait for him to go away." << endl;
 
     return choice(1, 3);
@@ -69,16 +69,14 @@ int LevelOne::waitChoice() {
 int LevelOne::waitIntimidate() {
     int roll1;
     roll1 = {roll(player.getStr(), 15)};
-    cout << "You tell the bandit that if he doesn't let you go now, when someone does, he will be"
-                "the first to go. ";
     if (roll1 >= 15) {
         cout << "He takes a step back and looks back at the camp.";
-        cout << "Bandit: You're a pyscho - I know it. Fine, just go.";
+        cout << "Man: Yeah, alright. You ain't worth keeping around.";
         cout << "He cuts you free while no one is looking at takes a step back. You walk away before anybody notices.";
         return 0;
     } // success
     else {
-        cout << "Bandit: Yeah, right. No water for you then, 'tough' ";
+        cout << "Man: Yeah, right. No water for you then, 'tough' ";
         switch (player.getClass()) {
             case 1:
                 cout << "guy.";
@@ -94,14 +92,13 @@ int LevelOne::waitIntimidate() {
 int LevelOne::waitPersuade() {
     int roll1;
     roll1 = {roll(player.getStr(), 15)};
-    cout << "You tell the bandit that no one is going to pay for you no matter how long they keep you here.";
     if (roll1 >= 15) {
-        cout << "Bandit: Well, shit. You don't look like anybody important either. Aight, piss off.";
+        cout << "Man: Well, shit. You don't look like anybody important either. Aight, piss off.";
         cout << "He cuts you free. You walk away before anybody notices.";
         return 0;
     } // success
     else {
-        cout << "Bandit: Yeah, right, that's what they all say.";
+        cout << "Man: Yeah, right, that's what they all say.";
         cout << "He pours out the water and walks away.";
         return 1;
     } // fail
@@ -114,14 +111,14 @@ void LevelOne::breakFree() {
                     " breaks before your body does." << endl;
             break;
         case 2:
-            cout << endl << "You've found yourself in trouble more than you can count, with bindings tighter than "
-                    "these. You wriggle your hands out easily. These amatures clearly don't know what they're"
+            cout << endl << "You've found yourself in trouble more than you can count with bindings tighter than "
+                    "these. You wriggle your hands out easily. These amateurs clearly don't know what they're"
                     " doing." << endl;
             break;
         case 3:
             cout << endl <<
-                    "You wrap one leg around the tree and reach for the shiv in your boot. It takes a few tries "
-                    "but you eventually grab it and cut the ropes off." << endl;
+                    "You strain against the bindings and reach for the shiv in your boot. It takes a few tries "
+                    "but eventually your fingers find purchase and cut the ropes off." << endl;
             break;
     }
 }
@@ -155,24 +152,24 @@ int LevelOne::freeHandsWait(bool failedEscape, bool persFailedEscape) {
 void LevelOne::freeHandsAmbush() {
     auto [roll1, roll2] = rollAdv(player.getStr(), 15);
                     if (roll1 >= 15 || roll2 >= 15) {
-                        cout << endl << endl << "The bandit falls to the ground unconcious. He has a scimitar sheathed "
-                        "on his belt." << endl << endl;
-                        cout << "   1. Can't stay here any longer. Run away.";
-                        cout << "   2. Quickly take the scimitar before escaping.";
+                        cout << endl << endl << "The bandit falls to the ground unconscious. He has a scimitar sheathed "
+                        "on his hip." << endl << endl;
+                        cout << "   1. Grab the scimitar.";
+                        cout << "   2. Can't stay here any longer. Run away.";
                         int x = choice(1,2);
 
                         if (x == 2) {
-                            cout << endl << endl << "You quickly undo the bandits belt and put it on, scimitar along with "
-                                    "it. Player escapes.";
+                            cout << endl << endl << "You crouch down and take the scimitar.";
                         } else {
-                            cout << endl << endl << "player escapes without scimitar";
+                            cout << endl << "'Not worth the risk' you think to yourself. You swiftly leave the camp before anyone notices.";
+                            // End Level
                         }
                     } else {
                         cout << endl << endl << "surprise attack fail.";
                         cout << "The bandit stumbles back and shouts." << endl;
-                        cout << "Bandit: What the hell? How did you escape?!" << endl;
-                        cout << "The rest of the bandits heads snap to you. They get up from the camp fire, some pulling out "
-                                "weapons. You're severely out-numbered and unarmed." << endl << endl;
+                        cout << "Bandit: What the hell? How did you-?!" << endl;
+                        cout << "The rest of the bandits, hearing the commotion, get up from the camp fire, some pulling out "
+                                "weapons. You're severely out-numbered, and unarmed." << endl << endl;
 
                         cout << "   1. Run away.";
 
@@ -247,7 +244,7 @@ void LevelOne::confrontEscape() {
     cout << "You get up and step forward, shouting for the bandits attention. The chatter stops and "
             "is immediately replaced by the sounds of blades being unsheathed. The man from earlier "
             "steps forward, challenging you.";
-    cout << endl << endl << "   1. Nevermind, run away.";
+    cout << endl << endl << "   1. Never mind, run away.";
     cout << endl << "   2. Fight him.";
     int x = choice(1, 2);
 
@@ -308,15 +305,23 @@ void LevelOne::confrontEscape() {
 }
 
 void LevelOne::run() {
-    srand(time(0)); // seed RNG once at the start
+    srand(time(0)); // Seeds so random numbers are totally random and not deterministic still
     int choice{};
     bool failedEscape = false;
     bool persFailedEscape = false;
     // wake up
-    cout << endl << endl << "You wake up with your arms bound to a tree with rope. It's night. Not too far from you, "
-            "people walk by tents lit by fireplaces. You realize it's a bandit camp. You're probably "
-            "getting ransomed.";
+    cout << endl << "You wake up with your arms bound to a tree with rope and a throbbing pain in your head. It's night."
+                    " There is a camp not far in the distance filled with the chatter and cheers." << endl << endl;
 
+    cout << "Making insight check." << endl;
+
+    int roll1 = roll(player.getDex(), 2);
+    if (roll1 >= 2) {
+        cout << "You quickly realize that you are in a bandit camp. You are probably getting ransomed.";
+    }
+    else {
+        cout << "Wherever you may be, perhaps it's best not to stick around.";
+    }
     cout << endl << endl << "   1. Wait. " << endl;
 
     // Tided up Section - Wait / Escape Route
